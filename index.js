@@ -12,8 +12,14 @@ const port = 3000;
 
 app.post("/usuarios", (req, res) => {
     const users = req.body;
-    db.collection("users").add(users)
+    db.collection("users").doc("Marcos").set(users)
     res.send("Usuario añadido")
+});
+
+app.put("/usuarios", (req, res) => {
+    const users = req.body;
+    db.collection("users").doc("Marcos").set(users)
+    res.send("Usuario modificado")
 });
 
 app.get("/usuarios", (req, res) => {
